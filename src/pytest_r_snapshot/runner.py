@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import contextlib
 import os
 import subprocess
 import tempfile
@@ -91,10 +92,8 @@ class SubprocessRRunner:
             return completed.stdout
         finally:
             if script_path is not None:
-                try:
+                with contextlib.suppress(OSError):
                     script_path.unlink(missing_ok=True)
-                except OSError:
-                    pass
 
 
 def _render_script(user_code: str) -> str:

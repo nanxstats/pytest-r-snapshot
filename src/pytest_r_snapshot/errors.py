@@ -41,9 +41,11 @@ class UnclosedChunkError(ChunkParseError):
     """Raised when an R fenced chunk start fence has no matching end fence."""
 
     def __init__(self, *, path: Path, label: str, start_line: int) -> None:
-        super().__init__(
-            f"Unclosed R chunk {label!r} in {path}:{start_line}: missing closing ``` fence."
+        message = (
+            f"Unclosed R chunk {label!r} in {path}:{start_line}: "
+            "missing closing ``` fence."
         )
+        super().__init__(message)
 
 
 class ChunkNotFoundError(RSnapshotError):
