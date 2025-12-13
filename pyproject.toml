@@ -9,3 +9,10 @@ dependencies = []
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
+[dependency-groups]
+dev = [
+    "isort>=7.0.0",
+    "mypy>=1.19.0",
+    "ruff>=0.14.9",
+]
