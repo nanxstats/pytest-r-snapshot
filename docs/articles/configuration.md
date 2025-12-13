@@ -1,4 +1,4 @@
-# Configuration reference
+# Configuration
 
 This page lists configuration options for pytest-r-snapshot and how they are resolved.
 
