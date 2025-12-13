@@ -14,8 +14,15 @@ nav:
       - articles/troubleshooting.md
       - articles/design.md
       - articles/migration.md
-#  - API Reference:
-#    - Placeholder: reference/placeholder.md
+  - API reference:
+      - reference/top-level-api.md
+      - reference/snapshot.md
+      - reference/settings.md
+      - reference/normalize.md
+      - reference/chunks.md
+      - reference/runner.md
+      - reference/plugin.md
+      - reference/errors.md
   - Changelog: changelog.md
 
 extra_css:
