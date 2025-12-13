@@ -2,9 +2,36 @@
 name = "pytest-r-snapshot"
 version = "0.1.0"
 description = "A pytest plugin for snapshot testing against R code outputs"
-readme = "README.md"
-requires-python = ">= 3.10"
+authors = [{ name = "Nan Xiao", email = "me@nanx.me" }]
 dependencies = ["pytest>=7.0.0"]
+readme = "README.md"
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+
+    "Intended Audience :: Developers",
+
+    "Topic :: Software Development :: Quality Assurance",
+    "Topic :: Software Development :: Testing",
+
+    "License :: OSI Approved :: MIT License",
+
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+
+requires-python = ">= 3.10"
+
+[project.urls]
+Homepage = "https://nanx.me/pytest-r-snapshot/"
+Documentation = "https://nanx.me/pytest-r-snapshot/"
+Repository = "https://github.com/nanxstats/pytest-r-snapshot"
+Issues = "https://github.com/nanxstats/pytest-r-snapshot/issues"
+Changelog = "https://github.com/nanxstats/pytest-r-snapshot/blob/main/CHANGELOG.md"
 
 [project.entry-points.pytest11]
 r-snapshot = "pytest_r_snapshot.plugin"
