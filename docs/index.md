@@ -1,4 +1,4 @@
-# pytest-r-snapshot <img src="https://github.com/nanxstats/pytest-r-snapshot/raw/main/docs/assets/logo.png" align="right" width="120" />
+# pytest-r-snapshot <img src="assets/logo.png" align="right" width="120" />
 
 [![PyPI version](https://img.shields.io/pypi/v/pytest-r-snapshot)](https://pypi.org/project/pytest-r-snapshot/)
 ![Python versions](https://img.shields.io/pypi/pyversions/pytest-r-snapshot)
