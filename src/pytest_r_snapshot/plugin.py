@@ -5,8 +5,7 @@ from pathlib import Path
 
 import pytest
 
-from .errors import RSnapshotError
-from .errors import ChunkNotFoundError
+from .errors import ChunkNotFoundError, RSnapshotError
 from .runner import SubprocessRRunner
 from .settings import RSnapshotSettings, SnapshotMode, parse_env_assignments
 from .snapshot import RSnapshot, _RSnapshotSession
@@ -235,13 +234,17 @@ def r_snapshot_session(
 
 
 @pytest.fixture()
-def r_snapshot(request: pytest.FixtureRequest, r_snapshot_session: _RSnapshotSession) -> RSnapshot:
+def r_snapshot(
+    request: pytest.FixtureRequest, r_snapshot_session: _RSnapshotSession
+) -> RSnapshot:
     test_path = getattr(request.node, "path", None)
     if test_path is None:  # pragma: no cover
         test_path = Path(str(request.node.fspath))
     else:
         test_path = Path(str(test_path))
-    snapshot = RSnapshot(session=r_snapshot_session, test_path=test_path, nodeid=request.node.nodeid)
+    snapshot = RSnapshot(
+        session=r_snapshot_session, test_path=test_path, nodeid=request.node.nodeid
+    )
 
     declared = []
     for marker in request.node.iter_markers("r_snapshot"):

@@ -18,7 +18,7 @@ class ChunkLabelMissingError(ChunkParseError):
         message = (
             f"Missing R chunk label in {path}:{line}.\n\n"
             "Chunks must be labelled, for example:\n\n"
-            '    ```{r, my_label}\n'
+            "    ```{r, my_label}\n"
             "    x <- 1 + 1\n"
             "    print(x)\n"
             "    ```\n\n"
@@ -41,9 +41,11 @@ class UnclosedChunkError(ChunkParseError):
     """Raised when an R fenced chunk start fence has no matching end fence."""
 
     def __init__(self, *, path: Path, label: str, start_line: int) -> None:
-        super().__init__(
-            f"Unclosed R chunk {label!r} in {path}:{start_line}: missing closing ``` fence."
+        message = (
+            f"Unclosed R chunk {label!r} in {path}:{start_line}: "
+            "missing closing ``` fence."
         )
+        super().__init__(message)
 
 
 class ChunkNotFoundError(RSnapshotError):
@@ -70,4 +72,3 @@ class RscriptNotFoundError(RSnapshotError):
 
 class RExecutionError(RSnapshotError):
     """Raised when an R chunk execution fails."""
-

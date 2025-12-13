@@ -1,9 +1,9 @@
 from __future__ import annotations
 
+from collections.abc import Iterable
 from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
-from typing import Iterable
 
 from .errors import RSnapshotError
 
@@ -16,7 +16,7 @@ class SnapshotMode(str, Enum):
     AUTO = "auto"
 
     @classmethod
-    def parse(cls, value: str) -> "SnapshotMode":
+    def parse(cls, value: str) -> SnapshotMode:
         """Parse a snapshot mode value from config/CLI."""
 
         try:
@@ -58,4 +58,3 @@ def parse_env_assignments(values: Iterable[str]) -> dict[str, str]:
             )
         parsed[key] = value
     return parsed
-

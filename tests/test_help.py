@@ -8,4 +8,3 @@ def test_pytest_help_shows_r_snapshot_options(pytester: pytest.Pytester) -> None
     result = pytester.runpytest_inprocess("--help")
     assert "--r-snapshot" in result.stdout.str()
     assert "--r-snapshot-dir" in result.stdout.str()
-

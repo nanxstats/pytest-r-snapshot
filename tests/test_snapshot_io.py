@@ -9,8 +9,14 @@ def test_default_snapshot_layout(pytester: pytest.Pytester) -> None:
         test_paths="""
 from pathlib import Path
 
+
 def test_path_for_default_layout(r_snapshot):
-    expected = Path(__file__).parent / "__r_snapshots__" / Path(__file__).stem / "hello.txt"
+    expected = (
+        Path(__file__).parent
+        / "__r_snapshots__"
+        / Path(__file__).stem
+        / "hello.txt"
+    )
     assert r_snapshot.path_for("hello") == expected
 """
     )

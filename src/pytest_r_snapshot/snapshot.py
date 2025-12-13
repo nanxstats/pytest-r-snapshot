@@ -2,9 +2,9 @@ from __future__ import annotations
 
 import difflib
 import os
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Callable
 
 from .chunks import RChunk, parse_r_chunks, parse_r_chunks_from_text
 from .errors import ChunkNotFoundError, SnapshotNameError, SnapshotNotFoundError
@@ -37,7 +37,9 @@ class RSnapshot:
     modes, it executes the labelled R chunk and writes the snapshot file.
     """
 
-    def __init__(self, *, session: _RSnapshotSession, test_path: Path, nodeid: str) -> None:
+    def __init__(
+        self, *, session: _RSnapshotSession, test_path: Path, nodeid: str
+    ) -> None:
         self._session = session
         self._test_path = test_path
         self._nodeid = nodeid

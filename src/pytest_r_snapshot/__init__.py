@@ -10,7 +10,7 @@ if TYPE_CHECKING:  # pragma: no cover
     from _pytest.mark.structures import MarkDecorator
 
 
-def r_snapshot(name: str, *, ext: str = ".txt") -> "MarkDecorator":
+def r_snapshot(name: str, *, ext: str = ".txt") -> MarkDecorator:
     """Decorator alias for :func:`pytest.mark.r_snapshot`.
 
     This is a small convenience wrapper around the plugin's marker.
