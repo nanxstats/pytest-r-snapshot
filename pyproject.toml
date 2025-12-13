@@ -1,10 +1,13 @@
 [project]
 name = "pytest-r-snapshot"
 version = "0.1.0"
-description = "Add your description here"
+description = "A pytest plugin for snapshot testing against R code outputs"
 readme = "README.md"
 requires-python = ">= 3.10"
-dependencies = []
+dependencies = ["pytest>=7.0.0"]
+
+[project.entry-points.pytest11]
+r-snapshot = "pytest_r_snapshot.plugin"
 
 [build-system]
 requires = ["hatchling"]
@@ -35,3 +38,6 @@ select = [
     # isort
     "I",
 ]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
