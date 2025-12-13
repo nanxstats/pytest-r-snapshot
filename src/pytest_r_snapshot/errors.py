@@ -18,7 +18,7 @@ class ChunkLabelMissingError(ChunkParseError):
         message = (
             f"Missing R chunk label in {path}:{line}.\n\n"
             "Chunks must be labelled, for example:\n\n"
-            '    ```{r, my_label}\n'
+            "    ```{r, my_label}\n"
             "    x <- 1 + 1\n"
             "    print(x)\n"
             "    ```\n\n"
@@ -70,4 +70,3 @@ class RscriptNotFoundError(RSnapshotError):
 
 class RExecutionError(RSnapshotError):
     """Raised when an R chunk execution fails."""
-

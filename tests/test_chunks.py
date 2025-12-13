@@ -51,7 +51,9 @@ def test_summary():
         ("r label", "label"),
     ],
 )
-def test_label_extraction(pytester: pytest.Pytester, header: str, expected: str) -> None:
+def test_label_extraction(
+    pytester: pytest.Pytester, header: str, expected: str
+) -> None:
     test_file = pytester.makepyfile(
         test_example=f"""
 def test_x():

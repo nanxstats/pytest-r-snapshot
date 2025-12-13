@@ -3,8 +3,9 @@ from __future__ import annotations
 import os
 import subprocess
 import tempfile
+from collections.abc import Mapping
 from pathlib import Path
-from typing import Mapping, Protocol
+from typing import Protocol
 
 from .errors import RExecutionError, RscriptNotFoundError
 
@@ -104,4 +105,3 @@ def _render_script(user_code: str) -> str:
         "})\n"
         'cat(paste(out, collapse = "\\n"))\n'
     )
-

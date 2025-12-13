@@ -15,4 +15,3 @@ def test_runner_missing_rscript_gives_helpful_message(tmp_path: Path) -> None:
     message = str(excinfo.value)
     assert "Rscript executable not found" in message
     assert "--r-snapshot-rscript" in message
-

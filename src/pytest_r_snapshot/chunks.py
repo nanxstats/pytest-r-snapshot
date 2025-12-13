@@ -126,8 +126,10 @@ def _parse_start_fence_header(line: str) -> str | None:
 def _extract_label(header: str, *, path: Path, line: int) -> str:
     label_match = _LABEL_KV_RE.search(header)
     if label_match is not None:
-        label = label_match.group("dq") or label_match.group("sq") or label_match.group(
-            "bare"
+        label = (
+            label_match.group("dq")
+            or label_match.group("sq")
+            or label_match.group("bare")
         )
         return label.strip()
 

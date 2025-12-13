@@ -15,4 +15,3 @@ def strip_trailing_whitespace(text: str) -> str:
 
     parts = normalize_newlines(text).split("\n")
     return "\n".join(part.rstrip(" \t") for part in parts)
-
