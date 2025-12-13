@@ -20,6 +20,12 @@ You can install pytest-r-snapshot from PyPI:
 pip install pytest-r-snapshot
 ```
 
+If your project is managed with `uv`, add it as a dev dependency:
+
+```bash
+uv add --dev pytest-r-snapshot
+```
+
 Or install the development version from GitHub:
 
 ```bash
