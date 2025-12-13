@@ -1,0 +1,9 @@
+nav:
+  - Home: index.md
+  - Articles:
+      - Setup: articles/setup.md
+      - Usage: articles/usage.md
+      - Configuration: articles/configuration.md
+      - Troubleshooting: articles/troubleshooting.md
+      - Design: articles/design.md
+      - Migration: articles/migration.md
