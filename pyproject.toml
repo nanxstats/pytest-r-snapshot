@@ -11,7 +11,14 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [dependency-groups]
-dev = ["isort>=7.0.0", "mypy>=1.19.0", "ruff>=0.14.9"]
+dev = [
+    "isort>=7.0.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.7.0",
+    "mkdocstrings-python>=2.0.1",
+    "mypy>=1.19.0",
+    "ruff>=0.14.9",
+]
 
 [tool.ruff.lint]
 select = [
