@@ -43,7 +43,7 @@ Notes:
 If `r_snapshot_dir` is set, snapshots are written under:
 
 ```text
-<r_snapshot_dir>/<test_file_stem>/<name><ext>`
+<r_snapshot_dir>/<test_file_stem>/<name><ext>
 ```
 
 If `r_snapshot_dir` is not set, snapshots are written next to the test file:
