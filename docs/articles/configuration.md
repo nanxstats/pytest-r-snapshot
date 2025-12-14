@@ -7,7 +7,7 @@ This page lists configuration options for pytest-r-snapshot and how they are res
 Controls whether snapshots are read from disk or recorded by running R:
 
 - CLI: `--r-snapshot={replay,record,auto}`
-  - Aliases: `--r-snapshot-record`, `--r-snapshot-auto`
+    - Aliases: `--r-snapshot-record`, `--r-snapshot-auto`
 - Ini: `r_snapshot_mode`
 - Default: `replay`
 
@@ -21,7 +21,9 @@ Controls where snapshot files are stored:
 
 When `r_snapshot_dir` is set, snapshots are written under:
 
-`<r_snapshot_dir>/<test_file_stem>/<name><ext>`
+```text
+<r_snapshot_dir>/<test_file_stem>/<name><ext>
+```
 
 ## R execution options
 

@@ -70,13 +70,13 @@ replay mode (no R required).
 ## What you get
 
 - A pytest fixture `r_snapshot` with methods:
-  - `assert_match_text(actual, name=..., ext=".txt", normalize=...)`
-  - `read_text(name=..., ext=".txt")`
-  - `record_text(name=..., ext=".txt")`
-  - `path_for(name=..., ext=".txt")`
+    - `assert_match_text(actual, name=..., ext=".txt", normalize=...)`
+    - `read_text(name=..., ext=".txt")`
+    - `record_text(name=..., ext=".txt")`
+    - `path_for(name=..., ext=".txt")`
 - Snapshot modes: `replay` (default), `record`, `auto`.
 - Chunk extraction for R Markdown-style fenced chunks inside Python source:
-  - Commented fences (chunk lines prefixed with `#`).
-  - Raw chunks in docstrings / multi-line strings.
-- Configurable R execution: `Rscript` path, environment, working directory,
-  timeout, encoding.
+    - Commented fences (chunk lines prefixed with `#`).
+    - Raw chunks in docstrings / multi-line strings.
+- Configurable R execution context: `Rscript` path, environment,
+  working directory, timeout, encoding.

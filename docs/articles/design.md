@@ -8,9 +8,9 @@ When a test calls `r_snapshot.assert_match_text(...)`:
 
 1. The snapshot file path is resolved for `(test_file, name, ext)`.
 2. The expected value is obtained based on the configured mode:
-   - `replay`: read the snapshot file
-   - `record`: run R and rewrite the snapshot file
-   - `auto`: record only if the snapshot file is missing
+    - `replay`: read the snapshot file
+    - `record`: run R and rewrite the snapshot file
+    - `auto`: record only if the snapshot file is missing
 3. Expected and actual are newline-normalized (and optionally user-normalized).
 4. If they differ, pytest-friendly unified diff output is included in the failure message.
 
@@ -19,26 +19,26 @@ When a test calls `r_snapshot.assert_match_text(...)`:
 The implementation follows a "thin orchestrator" pattern:
 
 - `pytest_r_snapshot/chunks.py`
-  - Parses labelled R fenced chunks from Python source files.
-  - Scans line-by-line and tracks `start_line`/`end_line` for diagnostics.
-  - Supports both commented chunks and raw chunks in docstrings/multiline strings.
+    - Parses labelled R fenced chunks from Python source files.
+    - Scans line-by-line and tracks `start_line`/`end_line` for diagnostics.
+    - Supports both commented chunks and raw chunks in docstrings/multiline strings.
 - `pytest_r_snapshot/runner.py`
-  - Defines the `RRunner` protocol and a subprocess implementation.
-  - Runs `Rscript --vanilla <tempfile.R>` and returns captured stdout.
-  - Wraps user code in a minimal R template using `capture.output({ ... })` for deterministic text snapshots.
+    - Defines the `RRunner` protocol and a subprocess implementation.
+    - Runs `Rscript --vanilla <tempfile.R>` and returns captured stdout.
+    - Wraps user code in a minimal R template using `capture.output({ ... })` for deterministic text snapshots.
 - `pytest_r_snapshot/snapshot.py`
-  - Implements the public `RSnapshot` class.
-  - Resolves snapshot paths, reads/writes snapshot files, and performs comparisons.
-  - Delegates parsing to `chunks` and execution to an `RRunner`.
+    - Implements the public `RSnapshot` class.
+    - Resolves snapshot paths, reads/writes snapshot files, and performs comparisons.
+    - Delegates parsing to `chunks` and execution to an `RRunner`.
 - `pytest_r_snapshot/settings.py`
-  - Defines settings (`RSnapshotSettings`) and `SnapshotMode`, plus parsing helpers.
+    - Defines settings (`RSnapshotSettings`) and `SnapshotMode`, plus parsing helpers.
 - `pytest_r_snapshot/plugin.py`
-  - Integrates with pytest: CLI/ini options, marker registration, and fixtures.
-  - Builds effective settings using the precedence model: CLI overrides everything; a `conftest.py` settings fixture can override ini defaults.
+    - Integrates with pytest: CLI/ini options, marker registration, and fixtures.
+    - Builds effective settings using the precedence model: CLI overrides everything; a `conftest.py` settings fixture can override ini defaults.
 - `pytest_r_snapshot/errors.py`
-  - Custom exception types for clear, targeted error messages.
+    - Custom exception types for clear, targeted error messages.
 - `pytest_r_snapshot/normalize.py`
-  - Small, generic normalization helpers (newline normalization, trimming).
+    - Small, generic normalization helpers (newline normalization, trimming).
 
 ## Configuration precedence
 

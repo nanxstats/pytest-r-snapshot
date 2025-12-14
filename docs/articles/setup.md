@@ -7,14 +7,16 @@ including a recommended CI workflow that does **not** require R.
 
 - Python >= 3.10
 - `pytest` (installed automatically as a dependency)
-- **R (optional)**:
-  - Required for recording snapshots (`--r-snapshot=record` or `--r-snapshot=auto` when a snapshot is missing)
-  - Not required for replaying snapshots (the default mode)
+- **R (optional)**: Required for recording snapshots (`--r-snapshot=record` or `--r-snapshot=auto` when a snapshot is missing). Not required for replaying snapshots (the default mode)
 
 ## Install
 
 ```bash
 pip install pytest-r-snapshot
+```
+
+```bash
+uv add --dev pytest-r-snapshot
 ```
 
 Pytest will discover the plugin automatically when it is installed.
@@ -38,20 +40,25 @@ r_snapshot_encoding = "utf-8"
 
 Notes:
 
-- If `r_snapshot_dir` is set, snapshots are written under:
-  - `<r_snapshot_dir>/<test_file_stem>/<name><ext>`
-- If `r_snapshot_dir` is not set, snapshots are written next to the test file:
-  - `<test_dir>/__r_snapshots__/<test_file_stem>/<name><ext>`
+If `r_snapshot_dir` is set, snapshots are written under:
+
+```text
+<r_snapshot_dir>/<test_file_stem>/<name><ext>
+```
+
+If `r_snapshot_dir` is not set, snapshots are written next to the test file:
+
+```text
+<test_dir>/__r_snapshots__/<test_file_stem>/<name><ext>
+```
 
 ## Recording workflow
 
 1. Write tests that embed labelled R chunks (see `docs/articles/usage.md`).
 2. Record snapshots locally:
-
-   ```bash
-   pytest --r-snapshot=record
-   ```
-
+    ```bash
+    pytest --r-snapshot=record
+    ```
 3. Commit the snapshot files to your repository.
 4. Run CI in replay mode (default), without requiring R.
 
