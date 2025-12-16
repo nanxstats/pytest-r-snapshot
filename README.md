@@ -9,6 +9,7 @@
 ![License](https://img.shields.io/pypi/l/pytest-r-snapshot)
 
 A pytest plugin for snapshot testing against reference outputs produced by R code.
+Particularly useful for test-driven development (TDD) when porting R packages to Python.
 
 It is designed for a portable workflow:
 
