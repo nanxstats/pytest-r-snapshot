@@ -40,6 +40,10 @@ The implementation follows a "thin orchestrator" pattern:
 - `pytest_r_snapshot/normalize.py`
     - Small, generic normalization helpers (newline normalization, trimming).
 
+!!! note
+    Chunk parsing is cached per test file for the duration of a pytest session,
+    so each file is parsed at most once. This keeps large test suites fast.
+
 ## Configuration precedence
 
 Settings are merged in this order:

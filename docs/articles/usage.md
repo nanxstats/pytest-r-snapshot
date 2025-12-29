@@ -135,6 +135,11 @@ The marker is repeatable. It is used for better errors (for example, a test decl
 
 The `normalize=` hook lets you apply domain-specific normalization to both expected and actual text before comparison.
 
+!!! note
+    R output can vary across R versions, platforms, locales, and package versions.
+    If you see noisy diffs, use `normalize=` to stabilize snapshots (for example,
+    normalize paths, round numeric output, or strip trailing whitespace).
+
 Example: normalize newlines and strip trailing whitespace:
 
 ```python
