@@ -101,3 +101,10 @@ def r_snapshot_settings() -> RSnapshotSettings:
 ```
 
 CLI flags still override this fixture.
+
+!!! note
+    The `r_snapshot_runner` fixture is session-scoped, so a single `Rscript`
+    configuration is used for the entire test session.
+    If you need different R environments, run separate pytest invocations
+    with different settings (for example, vary `--r-snapshot-rscript` or
+    `--r-snapshot-env`).
