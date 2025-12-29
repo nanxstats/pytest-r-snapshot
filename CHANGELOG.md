@@ -1,3 +1,17 @@
+# Changelog
+
+## pytest-r-snapshot 0.1.1
+
+### Testing
+
+- Add snapshot name traversal tests to reject malicious names (#15).
+- Add a timeout test for the subprocess R runner without requiring R (#16).
+- Expand snapshot name validation tests for empty, dot, and valid names (#19).
+
+### Documentation
+
+- Document R output determinism guidance, chunk parsing cache behavior, and session-scoped runner implications (#17).
+
 ## pytest-r-snapshot 0.1.0
 
 ### New features
