@@ -12,6 +12,8 @@ def _path_traversal_names() -> list[str]:
     sep = os.path.sep
     altsep = os.path.altsep
     names = [
+        # Use hardcoded forward slashes so POSIX-style traversal is always tested,
+        # even on platforms where "/" is only available via os.path.altsep.
         "../../../etc/passwd",
         f"..{sep}..{sep}etc{sep}passwd",
         f"subdir{sep}file",
@@ -32,3 +34,21 @@ def _path_traversal_names() -> list[str]:
 def test_snapshot_name_rejects_path_traversal(name: str) -> None:
     with pytest.raises(SnapshotNameError):
         _validate_snapshot_name(name)
+
+
+@pytest.mark.parametrize("name", ["", "   ", ".", ".."])
+def test_snapshot_name_rejects_empty_or_dot_names(name: str) -> None:
+    with pytest.raises(SnapshotNameError):
+        _validate_snapshot_name(name)
+
+
+@pytest.mark.parametrize(
+    ("name", "expected"),
+    [
+        ("my_snapshot", "my_snapshot"),
+        ("test-123", "test-123"),
+        ("  spaced  ", "spaced"),
+    ],
+)
+def test_snapshot_name_accepts_valid_names(name: str, expected: str) -> None:
+    assert _validate_snapshot_name(name) == expected
