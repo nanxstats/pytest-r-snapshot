@@ -1,0 +1,104 @@
+[project]
+site_name = "pytest-r-snapshot"
+site_description = "A pytest plugin for snapshot testing against R reference outputs"
+site_author = "Nan Xiao"
+site_url = "https://nanx.me/pytest-r-snapshot/"
+repo_url = "https://github.com/nanxstats/pytest-r-snapshot"
+repo_name = "nanxstats/pytest-r-snapshot"
+edit_uri = "edit/main/docs/"
+copyright = """
+Copyright &copy; 2026 pytest-r-snapshot authors
+"""
+
+nav = [
+    { "Home" = "index.md" },
+    { "Articles" = [
+        "articles/setup.md",
+        "articles/usage.md",
+        "articles/configuration.md",
+        "articles/troubleshooting.md",
+        "articles/design.md",
+        "articles/migration.md",
+    ] },
+    { "API reference" = [
+        "reference/top-level-api.md",
+        "reference/snapshot.md",
+        "reference/settings.md",
+        "reference/normalize.md",
+        "reference/chunks.md",
+        "reference/runner.md",
+        "reference/plugin.md",
+        "reference/errors.md",
+    ] },
+    { "Changelog" = "changelog.md" },
+]
+
+extra_css = ["stylesheets/extra.css"]
+
+# ----------------------------------------------------------------------------
+# Section for configuring theme options
+# ----------------------------------------------------------------------------
+[project.theme]
+logo = "assets/logo.png"
+favicon = "assets/favicon.png"
+language = "en"
+
+features = [
+    "announce.dismiss",
+    "content.action.edit",
+    "content.action.view",
+    "content.code.annotate",
+    "content.code.copy",
+    "content.code.select",
+    "content.footnote.tooltips",
+    "content.tabs.link",
+    "content.tooltips",
+    "header.autohide",
+    #"navigation.expand",
+    "navigation.footer",
+    "navigation.indexes",
+    "navigation.instant",
+    "navigation.instant.prefetch",
+    #"navigation.instant.progress",
+    "navigation.path",
+    #"navigation.prune",
+    "navigation.sections",
+    #"navigation.tabs",
+    #"navigation.tabs.sticky",
+    "navigation.top",
+    "navigation.tracking",
+    "search.highlight",
+    #"toc.follow",
+    #"toc.integrate",
+]
+
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to light mode"
+
+[project.theme.font]
+text = "Source Sans 3"
+code = "JetBrains Mono"
+
+[project.theme.icon]
+repo = "fontawesome/brands/github"
+
+# ----------------------------------------------------------------------------
+# Section for configuring mkdocstrings plugin
+# ----------------------------------------------------------------------------
+[project.plugins.mkdocstrings]
+default_handler = "python"
+
+[project.plugins.mkdocstrings.handlers.python]
+paths = ["src"]
+
+[project.plugins.mkdocstrings.handlers.python.options]
+inherited_members = true
+show_root_heading = true
+show_source = false
