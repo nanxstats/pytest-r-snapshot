@@ -5,7 +5,7 @@
 [![CI tests](https://github.com/nanxstats/pytest-r-snapshot/actions/workflows/ci-tests.yml/badge.svg)](https://github.com/nanxstats/pytest-r-snapshot/actions/workflows/ci-tests.yml)
 [![Mypy check](https://github.com/nanxstats/pytest-r-snapshot/actions/workflows/mypy.yml/badge.svg)](https://github.com/nanxstats/pytest-r-snapshot/actions/workflows/mypy.yml)
 [![Ruff check](https://github.com/nanxstats/pytest-r-snapshot/actions/workflows/ruff-check.yml/badge.svg)](https://github.com/nanxstats/pytest-r-snapshot/actions/workflows/ruff-check.yml)
-[![docs](https://github.com/nanxstats/pytest-r-snapshot/actions/workflows/docs.yml/badge.svg)](https://nanx.me/pytest-r-snapshot/)
+[![Documentation](https://github.com/nanxstats/pytest-r-snapshot/actions/workflows/docs.yml/badge.svg)](https://nanx.me/pytest-r-snapshot/)
 ![License](https://img.shields.io/pypi/l/pytest-r-snapshot)
 
 A pytest plugin for snapshot testing against reference outputs produced by R code.
