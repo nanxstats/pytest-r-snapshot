@@ -49,11 +49,10 @@ exclude = ["/docs", "/AGENTS.md", "/mkdocs.yml", "/uv.lock"]
 [dependency-groups]
 dev = [
     "isort>=7.0.0",
-    "mkdocs>=1.6.1",
-    "mkdocs-material>=9.7.0",
     "mkdocstrings-python>=2.0.1",
     "mypy>=1.19.0",
     "ruff>=0.14.9",
+    "zensical>=0.0.15",
 ]
 
 [tool.ruff.lint]
