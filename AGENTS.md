@@ -30,7 +30,7 @@ Design rule: keep `RSnapshot` as an orchestrator; parsing stays in `chunks`, sub
 - Lint/type-check (recommended):
   - `.venv/bin/ruff check`
   - `.venv/bin/mypy .`
-- Build docs: `.venv/bin/mkdocs build`
+- Build docs: `.venv/bin/zensical build`
 
 Note: in sandboxed environments, `uv run ...` may fail if `uv` cannot access its global cache; prefer `.venv/bin/...` or set `UV_CACHE_DIR` to a repo-local directory.
 
@@ -54,4 +54,4 @@ Note: in sandboxed environments, `uv run ...` may fail if `uv` cannot access its
 ## Docs hygiene
 
 - Update `README.md` and `docs/` together when user-facing behavior changes.
-- Keep mkdocs nav in `mkdocs.yml` in sync with `docs/`.
+- Keep zensical nav in `zensical.toml` in sync with `docs/`.

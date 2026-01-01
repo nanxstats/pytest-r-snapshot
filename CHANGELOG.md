@@ -27,7 +27,7 @@
 
 ### Documentation
 
-- Added README and mkdocs articles (setup, usage, configuration, troubleshooting, design, migration).
+- Added README and articles (setup, usage, configuration, troubleshooting, design, migration).
 
 ### Testing
 
