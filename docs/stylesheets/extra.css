@@ -39,7 +39,7 @@ body {
 /* Header */
 
 .md-header__topic:first-child {
-    font-weight: 400
+    font-weight: 400;
 }
 
 .md-header__title {
