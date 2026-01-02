@@ -1,5 +1,15 @@
 # Changelog
 
+## pytest-r-snapshot 0.1.2
+
+### Documentation
+
+- Migrate documentation site to use Zensical (#21, #22, #24, #25).
+
+### Maintenance
+
+- Change the logo typeface for a fresh look (#23).
+
 ## pytest-r-snapshot 0.1.1
 
 ### Testing
