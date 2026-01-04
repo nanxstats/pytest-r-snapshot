@@ -1,6 +1,6 @@
 # Usage
 
-`pytest-r-snapshot` records reference outputs from **labelled R code chunks** embedded in your Python test files, then compares your Python outputs to those recorded snapshots.
+pytest-r-snapshot records reference outputs from **labelled R code chunks** embedded in your Python test files, then compares your Python outputs to those recorded snapshots.
 
 ## Basic fixture usage
 
@@ -23,7 +23,7 @@ Record snapshots locally:
 pytest --r-snapshot=record
 ```
 
-By default, CI can run `pytest` in replay mode without R.
+By default, CI can run pytest in replay mode without R.
 
 ## Embedding R chunks
 
@@ -67,11 +67,21 @@ The plugin dedents the chunk body to remove Python indentation while keeping rel
 
 By default, for `tests/test_example.py`, snapshots are stored under:
 
-`tests/__r_snapshots__/test_example/<name><ext>`
+```
+tests/__r_snapshots__/test_example/<name><ext>
+```
 
-You can override the snapshot root directory with `--r-snapshot-dir` / `r_snapshot_dir`. In that case snapshots are stored under:
+Here, `test_example` is the `test_file_stem` (the pytest test file name without `.py`), and `name` is the R code chunk label. For example, a chunk labelled `summary` will use:
 
-`<r_snapshot_dir>/test_example/<name><ext>`
+```
+tests/__r_snapshots__/test_example/summary.txt
+```
+
+You can override the snapshot root directory with `--r-snapshot-dir` or `r_snapshot_dir`. In that case, snapshots are stored under:
+
+```
+<r_snapshot_dir>/<test_file_stem>/<name><ext>
+```
 
 The default file extension is `.txt`. You can change it per assertion:
 
@@ -90,7 +100,7 @@ Both `"rtf"` and `".rtf"` are accepted.
 Examples:
 
 ```bash
-pytest                  # replay
+pytest
 pytest --r-snapshot=auto
 pytest --r-snapshot=record
 ```
@@ -105,7 +115,7 @@ These options matter when the plugin needs to run R (`record` mode, or `auto` wi
 - `--r-snapshot-timeout=SECONDS` / `r_snapshot_timeout`: per-chunk timeout
 - `--r-snapshot-encoding=ENC` / `r_snapshot_encoding`: snapshot file encoding
 
-See `docs/articles/configuration.md` for the full reference and precedence rules.
+See [Configuration](configuration.md) for the full reference and precedence rules.
 
 ## Markers (optional)
 
