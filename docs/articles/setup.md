@@ -1,12 +1,12 @@
 # Setup
 
-This guide shows how to set up a project to use `pytest-r-snapshot`,
+This guide shows how to set up a project to use pytest-r-snapshot,
 including a recommended CI workflow that does **not** require R.
 
 ## Requirements
 
 - Python >= 3.10
-- `pytest` (installed automatically as a dependency)
+- pytest (installed automatically as a dependency)
 - **R (optional)**: Required for recording snapshots (`--r-snapshot=record` or `--r-snapshot=auto` when a snapshot is missing). Not required for replaying snapshots (the default mode)
 
 ## Install
@@ -54,7 +54,7 @@ If `r_snapshot_dir` is not set, snapshots are written next to the test file:
 
 ## Recording workflow
 
-1. Write tests that embed labelled R chunks (see `docs/articles/usage.md`).
+1. Write tests that embed labelled R chunks (see [Usage](usage.md)).
 2. Record snapshots locally:
     ```bash
     pytest --r-snapshot=record

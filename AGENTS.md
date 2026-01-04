@@ -1,10 +1,10 @@
 # AGENTS.md
 
-Guidelines for AI coding agents working on `pytest-r-snapshot`.
+Guidelines for AI coding agents working on pytest-r-snapshot.
 
 ## Project overview
 
-- `pytest-r-snapshot` is a pytest plugin that snapshot-tests **Python outputs** against **reference outputs recorded from labelled R code chunks** embedded in Python test files.
+- pytest-r-snapshot is a pytest plugin that snapshot-tests **Python outputs** against **reference outputs recorded from labelled R code chunks** embedded in Python test files.
 - Default workflow is **portable CI**:
   - Developers run `pytest --r-snapshot=record` locally (requires R) and commit snapshot files.
   - CI runs in default `replay` mode (no R required).

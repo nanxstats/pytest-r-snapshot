@@ -1,6 +1,6 @@
 # Migration
 
-This guide outlines how to migrate from an ad hoc "run R chunks and save outputs" approach to `pytest-r-snapshot`.
+This guide outlines how to migrate from an ad hoc "run R chunks and save outputs" approach to pytest-r-snapshot.
 
 ## Keep your existing R chunks
 

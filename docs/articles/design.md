@@ -1,6 +1,6 @@
 # Design
 
-`pytest-r-snapshot` is intentionally small and modular. The public API is the `r_snapshot` fixture (an `RSnapshot` instance) and a few helpers; everything else is internal plumbing to keep parsing, subprocess execution, and snapshot I/O isolated and testable.
+pytest-r-snapshot is intentionally built small and modular. The public API is the `r_snapshot` fixture (an `RSnapshot` instance) and a few helpers; everything else is internal plumbing to keep parsing, subprocess execution, and snapshot I/O isolated and testable.
 
 ## High-level flow
 
