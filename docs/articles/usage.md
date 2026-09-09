@@ -124,6 +124,7 @@ You can declare snapshot dependencies at the test boundary:
 ```python
 import pytest
 
+
 @pytest.mark.r_snapshot("summary")
 def test_summary_matches_r(r_snapshot):
     r_snapshot.assert_match_text(my_python_summary(...), name="summary")
@@ -134,9 +135,9 @@ Or use the decorator alias:
 ```python
 from pytest_r_snapshot import r_snapshot
 
+
 @r_snapshot("summary")
-def test_summary_matches_r(r_snapshot):
-    ...
+def test_summary_matches_r(r_snapshot): ...
 ```
 
 The marker is repeatable. It is used for better errors (for example, a test declares snapshot `X` but no chunk `X` exists).
@@ -155,8 +156,10 @@ Example: normalize newlines and strip trailing whitespace:
 ```python
 from pytest_r_snapshot import normalize_newlines, strip_trailing_whitespace
 
+
 def normalize(text: str) -> str:
     return strip_trailing_whitespace(normalize_newlines(text))
+
 
 def test_output(r_snapshot):
     ...

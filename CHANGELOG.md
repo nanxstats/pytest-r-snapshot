@@ -1,15 +1,15 @@
 # Changelog
 
-## pytest-r-snapshot (development version)
+## pytest-r-snapshot 0.1.3
 
 ### Maintenance
 
-- Update GitHub Actions workflows to `actions/checkout@v7` and
-  `actions/setup-python@v7` and refresh the disabled Codecov step to
-  `codecov/codecov-action@v7` (#33).
 - Replace `hatchling` with `uv_build` as the build backend and declare the MIT
   license using the PEP 639 `license` field to eliminate the `uv build`
   warning (#32).
+- Update GitHub Actions workflows to `actions/checkout@v7` and
+  `actions/setup-python@v7` and refresh the disabled Codecov step to
+  `codecov/codecov-action@v7` (#33).
 
 ## pytest-r-snapshot 0.1.2
 
